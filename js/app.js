@@ -42,19 +42,19 @@ const page_content = [
  * 
 */
 function getIdFromString(str){
-    return str.split(" ").join("").toLowerCase()
+    return str.split(" ").join("").toLowerCase();
 }
 
 function createSection(header, para1, para2){
     return (
-        "<section id="+ getIdFromString(header) +" data-nav=" + header +" class='your-active-class'>" +
+        "<section id="+ getIdFromString(header) +" data-nav=" + header + ">" +
         "<div class='landing__container'>" +
         "<h2>" + header + "</h2>" +
         "<p>" + para1 + "</p>" +
         "<p>" + para2 + "</p>" +
         "</div>" +
         "</section>"
-    )
+    );
 }
 
 function createNavBarListItem(header){
@@ -69,13 +69,16 @@ function createNavBarListItem(header){
 */
 
 // build the nav
-const navbar_list = document.getElementById("navbar__list")
-const main_container = document.querySelector("main#container")
+const navbar_list = document.getElementById("navbar__list");
+const main_container = document.querySelector("main#container");
 
 page_content.forEach(function(content) {
-    navbar_list.innerHTML += createNavBarListItem(content.header)
-    main_container.innerHTML += createSection(content.header, content.para1, content.para2)
+    navbar_list.innerHTML += createNavBarListItem(content.header);
+    main_container.innerHTML += createSection(content.header, content.para1, content.para2);
 })
+
+// var first_anchor = getIdFromString(page_content[0].header);
+// var default_active_nav_item = document.getElementsByTagName("[href=#'"+first_anchor+"']");
 
 // Add class 'active' to section when near top of viewport
 
@@ -98,3 +101,17 @@ page_content.forEach(function(content) {
 
 // Bind click handler to menu items
 // so we can get a fancy scroll animation
+const menu_links = document.querySelectorAll(".menu__link");
+const sections = document.querySelectorAll('section');
+
+function switchActiveNavItem() {
+  let index = sections.length;
+
+  while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+  
+  menu_links.forEach((link) => link.classList.remove('active'));
+  menu_links[index].classList.add('active');
+}
+
+switchActiveNavItem();
+window.addEventListener('scroll', switchActiveNavItem);
