@@ -132,8 +132,10 @@ function switchActiveNavItem() {
   
   // Removing active class from anywhere it was present before
   menu_links.forEach((link) => link.classList.remove('active'));
+  sections.forEach((section) => section.classList.remove('your-active-class'));
   // Adding active class to current navigation item
   menu_links[index].classList.add('active');
+  sections[index].classList.add('your-active-class');
 }
 
 switchActiveNavItem();
