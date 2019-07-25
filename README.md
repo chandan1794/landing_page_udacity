@@ -2,12 +2,31 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Description](#description)
+* [Aim](#aim)
+* [Technology Stack](#technology-stack)
+* [Project Structure](#project-structure)
+* [Acknowledgements](#acknowledgements)
 
-## Instructions
+## Description
+This is the final project for FEND - Landing Page.
+The starter project was provided by the Udacity and contained HTML and CSS styling to display the static version of the project.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Aim
+To convert the given static project to an interactive one.
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Technology Stack
+Technology stack is primarily consisted of
+1. HTML
+2. CSS
+3. Javascript
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+## Project Structure
+1. index.html: It contains the main bare bone html code of the project.
+2. css/style.css: It contains all the styling which is being used in the project.
+3. js/app.js: It contains all the javascript code which is ingesting the data inside the html code and making it
+
+## Acknowledgements
+1. Udacity Beta Testing Team
+2. Stackoverflow
+3. W3school.com
