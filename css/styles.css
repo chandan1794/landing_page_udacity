@@ -10,6 +10,7 @@
 
 
 /* ---- Base Rules ---- */
+/* Applying smooth scrolling throughout the HTML document */
 html {
     scroll-behavior: smooth;
 }
